@@ -3,6 +3,8 @@
 ## References 
 
 - [Transactions](../transactions/README.md)
+- [Concurrency Control in Databases](https://www.gojek.io/blog/on-concurrency-control-in-databases)
+- [Deep Dive into Database Concurrency Control](https://www.alibabacloud.com/blog/a-deep-dive-into-database-concurrency-control_596779)
 - [Concurrency Control in PostgreSQL](https://www.postgresql.org/docs/current/mvcc.html)
 
 ## Locking Reads
