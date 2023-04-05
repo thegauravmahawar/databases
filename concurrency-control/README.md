@@ -5,6 +5,18 @@
 - [Transactions](../transactions/README.md)
 - [Concurrency Control in PostgreSQL](https://www.postgresql.org/docs/current/mvcc.html)
 
+## Locking Reads
+
+See: [Locking Reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)
+
+## Optimistic & Pessimistic Locking
+
+See: [Optimistic vs Pessimistic Locking](https://vladmihalcea.com/optimistic-vs-pessimistic-locking/)
+
+## Explicit Locking
+
+See: [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
+
 ## Handling Concurrenct Requests
 
 ### References
