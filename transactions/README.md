@@ -6,7 +6,7 @@
 
 A transaction is said to be atomic: from the point of view of other transactions, it either happens completely or not at all. A transactional database guarantees that all the updates made by a transaction are logged in permanent storage (i.e., on disk) before the transaction is reported complete.
 
-When multiple transactions are running concurrently, each one should not be able to see theincomplete changes made by others. So transactions must be all-or-nothing not only in terms of their permanent effect on the database, but also in terms of their visibility as they happen. The updates made so far by an open transaction are invisible to other transactions until the transaction completes, whereupon all the updates become visible simultaneously.
+When multiple transactions are running concurrently, each one should not be able to see the incomplete changes made by others. So transactions must be all-or-nothing not only in terms of their permanent effect on the database, but also in terms of their visibility as they happen. The updates made so far by an open transaction are invisible to other transactions until the transaction completes, whereupon all the updates become visible simultaneously.
 
 ```sql
 BEGIN

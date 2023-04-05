@@ -78,7 +78,7 @@ We could store the balance as an *unsigned integer*. Using this mitigation makes
 
 **Use an optimistic lock**
 
-See [Locks](../locks/README.md)
+See: [Optimistic Locking](https://vladmihalcea.com/optimistic-vs-pessimistic-locking/)
 
 When using optimistic locking, the query is designed only to succeed if certain conditions are met. In this case, the balance should be more or equal to the spending amount.
 
@@ -97,7 +97,7 @@ SQL: COMMIT
 
 **Use a mutex**
 
-See [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
+See: [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
 
 Mutexes provide a way to ensure exclusive access to a section of code. The use of mutex is visible in application code, this makes locking deliberate and explicit. 
 
@@ -122,7 +122,7 @@ A mutex generally has a TTL, so it prevents locking only for a certain time-fram
 
 **Use deliberate database locking**
 
-See [Locking Reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)
+See: [Locking Reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)
 
 By using `SELECT ... FOR UPDATE` we can turn our select statement into a locking read.
 
@@ -145,7 +145,7 @@ An up-side to this, over mutexes, is that the lock will remain for the duration 
 
 **Use named database locks**
 
-See [Advisory Locks](https://www.postgresql.org/docs/14/explicit-locking.html#ADVISORY-LOCKS)
+See: [Advisory Locks](https://www.postgresql.org/docs/14/explicit-locking.html#ADVISORY-LOCKS)
 
 Named locks are application defined locks that are enforced by the database. These locks do not block any other queries on any table, so it's up to the developer to use them correctly.
 
