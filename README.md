@@ -2,4 +2,4 @@
 
 ## Topics
 
-- [Database Consistency](database-consistency)
+- [Concurrency Control](concurrency-control)
