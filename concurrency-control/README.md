@@ -11,6 +11,24 @@
 
 See: [Locking Reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)
 
+If you query data and then insert or update related data within the same transaction, the regular `SELECT` statement does not give enough protection. Other transactions can update or delete the same rows you just queried.
+
+### SELECT ... FOR SHARE
+
+Sets the shared mode lock on any rows that are read. Other sessions can read the rows, but cannot modify them until your transaction commits. If any of these rows are changed by another transaction that has not yet committed, your query waits until that transaction ends and then uses the latest values.
+
+### SELECT ... FOR UPDATE
+
+For index records the search encounters, locks the rows and any associated index entries, the same as if you issued an `UPDATE` statement for those rows. Other transactions are blocked from updating those rows, from doing `SELECT ... FOR SHARE`, or from reading the data in certain transaction isolation levels.
+
+All locks set by `FOR SHARE` and `FOR UPDATE` queries are released when the transaction is committed or rolled back.
+
+A locking read clause in an outer statement does not lock the rows of a table in a nested subquery unless a locking read clause is also specified in the subquery.
+
+```sql
+SELECT * FROM t1 WHERE c1 = (SELECT c1 FROM t2) FOR UPDATE;
+```
+
 ## Optimistic & Pessimistic Locking
 
 See: [Optimistic vs Pessimistic Locking](https://vladmihalcea.com/optimistic-vs-pessimistic-locking/)
