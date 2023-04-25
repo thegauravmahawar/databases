@@ -33,6 +33,10 @@ SELECT * FROM t1 WHERE c1 = (SELECT c1 FROM t2) FOR UPDATE;
 
 See: [Optimistic vs Pessimistic Locking](https://vladmihalcea.com/optimistic-vs-pessimistic-locking/)
 
+**Optimistic Locking** - We could allow the conflict to occur, but then we need to detect it upon committing our transaction.
+
+**Pessimistic Locking** - If the cost of retrying is high, we could try to avoid the conflict altogether via locking.
+
 ## Explicit Locking
 
 See: [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
